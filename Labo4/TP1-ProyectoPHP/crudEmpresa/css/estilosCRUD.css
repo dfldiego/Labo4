@@ -1,0 +1,154 @@
+/*42.3 este codigo es para cuando le ponemos un ancho al elemento, no incremente el ancho cuando le agregamos un padding.ej: width:10px y si pongo un padding:5px, se siga teniendo un ancho de 10 en el elemento*/
+html{
+  box-sizing: border-box;    
+  font-size: 62.5%;  /*reset para REMS  - 62.5% = 10px de 16px*/
+}
+  /*42.4 este codigo es para cuando le ponemos un ancho al elemento, no incremente el ancho cuando le agregamos un padding.ej: width:10px y si pongo un padding:5px, se siga teniendo un ancho de 10 en el elemento*/
+*, *:before, *:after{                         
+  box-sizing: inherit;              
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem; 
+  line-height: 2;
+}
+
+/************************************* Globales: codigo que se reutiliza******************************/
+
+img{                                                  /*para todas las imagenes: es un selector MUY IMPORTANTE*/
+  max-width: 100%;                   /*para que las imagenes no superen el 100% de la pantalla*/
+}
+
+.contenedor{
+  width: 95%;
+  max-width: 120rem;                      /* = 1200px*/
+  margin: 0 auto 0 auto;                /*margin en el sentido de las agujas de reloj*/
+}
+
+h1{
+  font-size: 3.8rem;
+  
+}
+h2{
+  font-size: 3.4rem;
+  color: #344feb;
+}
+h3{
+  font-size: 2.6rem;
+}
+h4{
+  font-size: 2.2rem;
+}
+
+/******************************************Utilidades************************************************************/
+.seccion{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.fw-300{
+  font-weight: 300;
+
+}
+
+.centrar-texto{
+  text-align: center;
+
+}
+
+.d-block{
+  display: block !important;                        /*43.2 agregar uno o dos important por proyecto.  por tema cascada este toma mas importancia*/
+}
+
+.contenido-centrado{
+  max-width: 80rem;
+}
+a{
+  color: #444444;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/*******************************Botones************************************************************/
+.boton{         /*41.3*/
+  font-weight: 700;                                  /*41.6*/
+  text-decoration: none;                        /*41.7*/
+  font-size: 1.8rem;                                 /*41.8*/
+  padding: 1rem 3rem;                           /*41.9*/
+  margin-top: 3rem;                      /*42.1*/
+  display: inline-block;                  /*42.2 enlaces son inline, modificar el margintop,no ocupe 100% ancho */
+  text-align: center;                      /*43.1*/
+  border: none;
+  display: block;
+  flex: 0 0 100%;
+}
+.boton-celeste{
+  background-color:#5592bb;          /*41.5*/
+}
+
+/*TABLA*/
+.ancho-tablaMostrar{
+  width: 75%;
+}
+table{
+  margin-bottom: 20px;
+}
+table.blueTable {
+    border: 1px solid #1C6EA4;
+    background-color: #5592bb;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  table.blueTable td, table.blueTable th {
+    border: 1px solid #000000;
+    padding: 10px 10px;
+  }
+  table.blueTable tbody td {
+    font-size: 13px;
+  }
+  table.blueTable tr:nth-child(even) {
+    background: #5592bb;
+  }
+  table.blueTable thead {
+    background: #1C6EA4;
+    background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    border-bottom: 2px solid #444444;
+  }
+  table.blueTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-left: 2px solid #D0E4F5;
+  }
+  table.blueTable thead th:first-child {
+    border-left: none;
+  }
+  table.blueTable label{
+    color: #ffffff;
+  }
+  table.blueTable tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #D0E4F5;
+    background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+    border-top: 2px solid #444444;
+  }
+  table.blueTable tfoot td {
+    font-size: 14px;
+  }
+  table.blueTable tfoot .links {
+    text-align: right;
+  }
+  table.blueTable tfoot .links a{
+    display: inline-block;
+    background: #1C6EA4;
+    color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }

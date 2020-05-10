@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /*reset para REMS  - 62.5% = 10px de 16px*/
+}
+
+
+/*42.4 este codigo es para cuando le ponemos un ancho al elemento, no incremente el ancho cuando le agregamos un padding.ej: width:10px y si pongo un padding:5px, se siga teniendo un ancho de 10 en el elemento*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.centrar-titulo_noticia {
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-noticia {
+    background-position: center center;
+    background-size: cover;
+}
+
+
+/*NOTICIA COURUSEL*/
+
+.contenedor {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.centrar-noticia {
+    flex: 0 0 95%;
+}
+
+.centrar-noticia em {
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.centrar-noticia em {
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 50px;
+}
