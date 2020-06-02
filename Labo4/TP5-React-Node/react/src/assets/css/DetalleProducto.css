@@ -1,0 +1,43 @@
+html {
+    min-height: 100%;
+  }
+body{
+    font-family: Dosis, sans-serif;
+    font-size:  20px;
+}
+h1{
+    font-family: Dosis, sans-serif;
+    font-size:  40px;
+    text-align: center;
+}
+#inicio{
+    font-family: Dosis, sans-serif;
+    font-size:  20px;
+    text-align: center;
+}
+h2{
+    font-family: Dosis, sans-serif;
+    font-size:  30px;
+    text-align: center;
+}
+h3,h4,h5{
+    font-family: Dosis, sans-serif;
+    font-size:  16px;
+}
+h6{
+    font-family: Dosis, sans-serif;
+    font-size:  14px;
+}
+/*****************************************************************/
+.imagen-detalle{
+    min-width: 100%;
+    max-height: 300px;
+}
+.columna_uno_detalle{
+    flex-basis: calc(66% - 1rem);
+    border-right: 1px solid lightgrey;
+}
+.columna_dos_detalle{
+    flex-basis:  calc(33% - 1rem);
+    border-right: 1px solid lightgrey;
+}

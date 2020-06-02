@@ -1,0 +1,13 @@
+.costo-envio-gratis{
+    color: green;
+}
+.costo-envio{
+    color: orange;
+}
+td{
+  padding: 15px;  
+}
+.precio{
+  font-size: 40px;
+  font-weight: bold;
+}
