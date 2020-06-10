@@ -85,6 +85,7 @@ const FormularioUpdate = ({ id }) => {
               />
             </div>
 
+
             <div className="form-group col-md-6">
               <div
                 className="fileupload fileupload-new"
@@ -92,19 +93,20 @@ const FormularioUpdate = ({ id }) => {
               >
                 <div className="fileupload-preview thumbnail estilo-formulario-update"></div>
                 <div>
-                  <img src={url + inputs.imagen} alt="imagen instrumento" />
+                  <img
+                    src={url + inputs.imagen}
+                    alt="imagen instrumento"
+                  />
                   <br />
                   <br />
                   <span className="btn btn-file">
-                    <input
-                      type="file"
-                      name="imagen"
-                      onChange={handleInputChangeImage}
-                    />
+                    <input type="file" name="imagen" onChange={handleInputChangeImage} />
                   </span>
                 </div>
               </div>
             </div>
+
+
 
             <div className="form-group col-md-6">
               <label htmlFor="precio">Precio:</label>

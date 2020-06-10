@@ -19,7 +19,7 @@ const upload = multer({
       cb(null, file.originalname);
     }
   })
-}).single('imagenFormulario');
+}).single('imagen');
 // Configurar cabeceras y cors
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");

@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 
 const useSignUpForm = (cb, id) => {
   const [inputs, setInputs] = useState({});
+  const [imageFile, setimageFile] = useState({});
 
   //atrapar el evento submit
   const handleSubmit = (e) => {
     if (e) {
       e.preventDefault();
     }
-    debugger;
+    cargaImagen(e);
     console.log(inputs);
     // parametros de datos post
     const datapost = JSON.stringify(inputs);
@@ -37,7 +38,6 @@ const useSignUpForm = (cb, id) => {
     if (!event.target) {
       return;
     }
-    debugger;
     event.persist();
     setInputs((inputs) => ({
       ...inputs,
@@ -53,13 +53,33 @@ const useSignUpForm = (cb, id) => {
       return;
     }
     debugger;
+
     event.persist();
-    setInputs((inputs) => ({
+    setInputs({
       ...inputs,
       [event.target.name]: event.target.files[0].name
-    }));
+    });
+    setimageFile({
+      ...imageFile,
+      [event.target.name]: event.target.files[0],
+    });
     console.log(inputs.imagen);
   };
+
+  //CARGA IMAGEN
+  const cargaImagen = (e) => {
+    let formData = new FormData();
+    formData.append("imagen", imageFile.imagen);
+    fetch("http://localhost:3000/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((image) => {
+        console.log("image:" + image);
+      });
+  };
+
 
   return {
     handleSubmit,
