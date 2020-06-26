@@ -1,4 +1,4 @@
-Proyecto hecho con el framework Express.js y ORM Sequelize
+# Proyecto hecho con el framework Express.js y ORM Sequelize
 Dependencias instaladas:
 -express
 -body-parser
