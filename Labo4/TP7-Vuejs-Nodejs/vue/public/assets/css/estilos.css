@@ -1,0 +1,32 @@
+/*HTML*/
+
+
+/*NAVIGATION*/
+
+
+/*HOME*/
+
+
+/*PRODUCTO*/
+
+
+/*TARJETA*/
+
+
+/*DETALLE PRODUCTO*/
+.imagen-detalle{
+  min-width: 100%;
+  max-height: 300px;
+}
+.dos-columnas{
+  /*Row por bootstraps ya viene con un display:flex*/
+  justify-content: space-between;
+}
+.columna_uno_detalle{
+  flex-basis: calc(66% - 1rem);
+  border-right: 1px solid lightgrey;
+}
+.columna_dos_detalle{
+  flex-basis:  calc(33% - 1rem);
+  border-right: 1px solid lightgrey;
+}
