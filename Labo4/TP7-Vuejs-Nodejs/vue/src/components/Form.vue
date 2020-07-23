@@ -51,7 +51,7 @@
         <b-row>
           <b-col cols="3">
             <b-form-group id="input-group-6" label="Costo de Envío:" label-for="input-costo-envio">
-              <b-form-input id="input-costo-envio" v-model="form.costoEnvio" type="number" @keyup="enviogratis" required></b-form-input>
+              <b-form-input id="input-costo-envio" v-model="form.costoEnvio" type="number" required></b-form-input>
             </b-form-group>
           </b-col>
         </b-row>
@@ -109,12 +109,6 @@ export default {
     }; //return
   },
   methods: {
-    enviogratis(){
-      if (this.form.costoEnvio === 0 ) {
-        this.form.costoEnvio === "G";
-      }
-      return this.form.costoEnvio;
-    },
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
@@ -143,7 +137,10 @@ export default {
       const marca = frm.marca;
       const modelo = frm.modelo;
       const precio = frm.precio;
-      const costoEnvio = enviogratis(frm.costoEnvio);
+      let costoEnvio = frm.costoEnvio;
+      if (costoEnvio === 0 || costoEnvio === "0") {
+        costoEnvio = "G";
+      }
       const cantidadVendida = frm.cantidadVendida;
       const descripcion = frm.descripcion;
       const imagen = document.getElementById("imagen").files[0].name;
