@@ -7,10 +7,12 @@ import { InstrumentosService } from 'src/app/services/instrumentos.service';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-
+  instrumentosArr: any[] = [];
   constructor(private serviceInstrumentos: InstrumentosService) { }
 
   ngOnInit(): void {
+    this.instrumentosArr = this.serviceInstrumentos.getInstrumentos();
+    console.log(this.instrumentosArr);
   }
 
 }
