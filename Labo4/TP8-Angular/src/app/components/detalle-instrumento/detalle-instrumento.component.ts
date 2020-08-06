@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { InstrumentosService } from 'src/app/services/instrumentos.service';
 
 @Component({
   selector: 'app-detalle-instrumento',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalle-instrumento.component.css']
 })
 export class DetalleInstrumentoComponent implements OnInit {
-
-  constructor() { }
+  instrumento: any;
+  constructor(private activatedRoute: ActivatedRoute, private instrumentosService: InstrumentosService) {
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params['id']);
+      this.instrumento = this.instrumentosService.getInstrumentoXId(params['id']);
+    })
+  }
 
   ngOnInit(): void {
   }

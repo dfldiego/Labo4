@@ -1,0 +1,45 @@
+.color-naranja {
+  color: orangered;
+}
+
+.color-verde {
+  color: green;
+}
+
+.estilo-titulo {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.estilo-precio {
+  font-weight: lighter;
+  font-size: 42px;
+}
+
+/**MARCA  y MODELO*/
+.negrita-mayuscula {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*DETALLE PRODUCTO*/
+.imagen-detalle {
+  min-width: 40%;
+  max-height: 300px;
+}
+
+.dos-columnas {
+  /*Row por bootstraps ya viene con un display:flex*/
+  justify-content: space-between;
+}
+
+.columna_uno_detalle {
+  flex-basis: calc(66% - 1rem);
+  border-right: 1px solid lightgrey;
+}
+
+.columna_dos_detalle {
+  flex-basis: calc(33% - 1rem);
+  border-right: 1px solid lightgrey;
+}
