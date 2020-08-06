@@ -1,7 +1,7 @@
 <div class="container text-left">
   <div class="card mb-3 mt-3" *ngFor="let instrumentoAux of instrumentosArr, let i=index" style="max-width: 95%;">
     <div class="row no-gutters">
-      <div class="col-md-4 p-3" style="max-width: 70%;">
+      <div class="col-md-4 p-3" style="max-width: 70%;" (click)="verInstrumento(instrumentoAux.id)">
         <img src="assets/images/{{instrumentoAux.imagen}}" class="card-img" alt="...">
       </div>
       <div class="col-md-8">
