@@ -4,7 +4,7 @@ var Sequelize = require("sequelize");
 var sequelize = require("./database");
 
 //nombre de la tabla
-var nombreTabla = "instrumento";
+var nombreTabla = "instrumentos";
 
 /*metodo define(): 
 1°nombre de BBDD
@@ -12,9 +12,12 @@ var nombreTabla = "instrumento";
           especificamos tipo de datos.*/
 
 var Instrumento = sequelize.define(
-  nombreTabla,
-  {
-    id: { type: Sequelize.SMALLINT, primaryKey: true, autoIncrement: true },
+  nombreTabla, {
+    id: {
+      type: Sequelize.SMALLINT,
+      primaryKey: true,
+      autoIncrement: true
+    },
     instrumento: Sequelize.STRING,
     marca: Sequelize.STRING,
     modelo: Sequelize.STRING,
@@ -23,14 +26,15 @@ var Instrumento = sequelize.define(
       type: Sequelize.INTEGER,
       allowNull: false,
       validate: {
-        notNull: {msg: "precio es requerido"}
+        notNull: {
+          msg: "precio es requerido"
+        }
       }
     },
     costoEnvio: Sequelize.STRING,
     cantidadVendida: Sequelize.INTEGER,
     descripcion: Sequelize.TEXT,
-  },
-  {
+  }, {
     //quitar createdAt y updated
     timestamps: false,
   }

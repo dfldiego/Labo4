@@ -1,15 +1,15 @@
 <div class="container text-left">
-  <div class="card mb-3 mt-3" *ngFor="let instrumentoAux of instrumentosArr, let i=index" style="max-width: 95%;">
+  <div class="card mb-3 mt-3" *ngFor="let instrumentoAux of instrumentosArr[1], let i=index" style="max-width: 95%;">
     <div class="row no-gutters">
       <div class="col-md-4 p-3" style="max-width: 70%;" (click)="verInstrumento(instrumentoAux.id)">
-        <img src="assets/images/{{instrumentoAux.imagen}}" class="card-img" alt="...">
+        <img src="http://localhost:3000/images/{{instrumentoAux.imagen}}" class="card-img" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title estilo-titulo">{{instrumentoAux.instrumento}}</h5>
           <p class="card-text" class="estilo-precio">$ {{instrumentoAux.precio}}</p>
           <p *ngIf="instrumentoAux.costoEnvio == 'G'; else elseBlock " class="color-verde">
-            <img src="assets/images/camion.png" alt="camion">Envío gratis a todo el país
+            <img src="http://localhost:3000/images/camion.png" alt="camion">Envío gratis a todo el país
           </p>
           <ng-template #elseBlock>
             <div class="color-naranja">

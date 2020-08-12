@@ -4,8 +4,8 @@ export class Instrumento {
     marca: string;
     modelo: string;
     imagen: string;
-    precio: string;
+    precio: number;
     costoEnvio: string;
-    cantidadVendida: string;
+    cantidadVendida: number;
     descripcion: string;
 }
