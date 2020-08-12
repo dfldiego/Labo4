@@ -1,0 +1,17 @@
+.color-naranja {
+  color: orangered;
+}
+
+.color-verde {
+  color: green;
+}
+
+.estilo-precio {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.estilo-titulo {
+  font-weight: lighter;
+  font-size: 26px;
+}

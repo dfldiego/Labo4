@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row no-gutters mt-5 dos-columnas ">
+
+    <div class="col-md-8 columna_uno_detalle">
+      <div style="text-align: center;">
+        <img src="assets/images/{{instrumento.imagen}}" class="img-fluid rounded-0 imagen-detalle"
+          [alt]="instrumento.instrumento">
+      </div>
+      <div>
+        <p>Descripcion:</p>
+        <p>{{instrumento.descripcion}}</p>
+      </div>
+      <br>
+      <a [routerLink]="['/productos']">
+        <button type="button" class="btn btn-outline-danger">Regresar</button>
+      </a>
+    </div>
+
+    <div class="col-md-4 columna_dos_detalle">
+      <p>{{instrumento.cantidadVendida}} vendidas</p>
+      <h1 class="estilo-titulo ">{{instrumento.instrumento}}</h1>
+      <h2 class="estilo-precio"> ${{instrumento.precio}}</h2>
+      <p class="negrita-mayuscula">MARCA:{{ instrumento.marca }}</p>
+      <p class="negrita-mayuscula">MODELO:{{ instrumento.modelo }}</p>
+      <p style="font-weight: bold;">Costo de Envio:</p>
+      <p *ngIf="instrumento.costoEnvio == 'G'; else elseBlock " class="color-verde">
+        <img src="assets/images/camion.png" alt="camion">Envío gratis a todo el país
+      </p>
+      <ng-template #elseBlock>
+        <div class="color-naranja">
+          Costo de Envio Interior de Argentina: ${{instrumento.costoEnvio}}
+        </div>
+      </ng-template>
+      <br>
+      <button type="button" class="btn btn-outline-primary">Agregar al Carrito</button>
+    </div>
+  </div>
+</div>
