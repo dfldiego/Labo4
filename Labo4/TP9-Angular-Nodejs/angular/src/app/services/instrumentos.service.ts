@@ -11,6 +11,7 @@ export class InstrumentosService {
   //instrumentosFile: any = (data as any).default;
   public instrumentosData: Instrumento[] = [];
   public instrumentoEncontrado: Instrumento;
+  instrumentoAdminUrl: string = "http://localhost:3000/instrumento/";
 
   constructor(public http: HttpClient) {
     console.log("Servicio Cargado!!!");
@@ -29,7 +30,6 @@ export class InstrumentosService {
     }
   }
 
-  //---------------------------------------------------------------------------------------------------------
   //Metodo GETALL()
   getInstrumentosFromDataBase() {
     return this.http.get("http://localhost:3000/instrumento/").pipe(map(instrumentosData => instrumentosData));
@@ -40,8 +40,12 @@ export class InstrumentosService {
     return this.http.get("http://localhost:3000/instrumento/" + idx).pipe(map(instrumentoEncontrado => instrumentoEncontrado));
   }
 
-  //---------------------------------------------------------------------------------------------------------
-
-
+  //Metodo DELETE()
+  deleteInstrumento(idInstrumento: string) {
+    return this.http.delete("http://localhost:3000/instrumento/" + idInstrumento).pipe(map(res => {
+      console.log(res);
+      return res;
+    }));
+  }
 
 }
