@@ -3,6 +3,7 @@ import * as data from 'src/assets/datos/instrumentos.json';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Instrumento } from '../entities/Instrumento';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,16 @@ export class InstrumentosService {
   //Metodo GETONE()
   getInstrumentoFromDataBaseById(idx: string) {
     return this.http.get("http://localhost:3000/instrumento/" + idx).pipe(map(instrumentoEncontrado => instrumentoEncontrado));
+  }
+
+  //Metodo CREATE()
+  newInstrumento(data: Instrumento): Observable<Instrumento> {
+    return this.http.post<Instrumento>("http://localhost:3000/instrumento/", data);
+  }
+
+  //Metodo UPDATE()
+  updateInstrumento(id: number, data: Instrumento): Observable<Instrumento> {
+    return this.http.put<Instrumento>("http://localhost:3000/instrumento/" + id, data);
   }
 
   //Metodo DELETE()

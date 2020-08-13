@@ -30,7 +30,6 @@ export class InstrumentoListaComponent implements OnInit {
 
   //DELETE()
   delete(idInstrumento: string) {
-    debugger;
     var opcion = confirm("¿Esta seguro que desea eliminar el instrumento?");
     if (opcion == true) {
       this.servicioInstrumento.deleteInstrumento(idInstrumento).subscribe(data => {
