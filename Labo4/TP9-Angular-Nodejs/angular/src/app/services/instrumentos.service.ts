@@ -29,6 +29,7 @@ export class InstrumentosService {
     }
   }
 
+  //---------------------------------------------------------------------------------------------------------
   //Metodo GETALL()
   getInstrumentosFromDataBase() {
     return this.http.get("http://localhost:3000/instrumento/").pipe(map(instrumentosData => instrumentosData));
@@ -38,5 +39,9 @@ export class InstrumentosService {
   getInstrumentoFromDataBaseById(idx: string) {
     return this.http.get("http://localhost:3000/instrumento/" + idx).pipe(map(instrumentoEncontrado => instrumentoEncontrado));
   }
+
+  //---------------------------------------------------------------------------------------------------------
+
+
 
 }

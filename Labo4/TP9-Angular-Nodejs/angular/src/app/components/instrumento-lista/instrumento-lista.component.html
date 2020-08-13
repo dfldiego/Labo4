@@ -1,1 +1,60 @@
-<p>instrumento-lista works!</p>
+<ng-container *ngIf="instrumentos">
+    <div class="container" fluid="md">
+        <div class="col-md-12 text-right">
+            <button [routerLink]="['/admin', 'nuevo']" type="button" class="btn btn-outline-primary mt-4 mb-4"
+                type="button" name="button">
+                Nuevo Instrumento
+            </button>
+        </div>
+        <div class="row animated fadeIn">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Costo Envio</th>
+                                <th>Cantidad Vendida</th>
+                                <th>Descripcion</th>
+                                <th class="text-right">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let instrumento of instrumentos[1]; let i = index">
+                                <th scope="row">{{ i + 1 }}</th>
+                                <td>{{ instrumento.instrumento }}</td>
+                                <td>{{ instrumento.marca }}</td>
+                                <td>{{ instrumento.modelo }}</td>
+                                <td>
+                                    <img src="http://localhost:3000/images/{{instrumento.imagen}}" alt="imagen">
+                                </td>
+                                <td>{{ instrumento.precio }}</td>
+                                <td>{{ instrumento.costoEnvio }}</td>
+                                <td>{{ instrumento.cantidadVendida }}</td>
+                                <td>{{ instrumento.descripcion }}</td>
+                                <td>
+                                    <button [routerLink]="['/detalle-instrumento', instrumento.id]" type="button"
+                                        class="btn btn-outline-primary mt-1 mb-1 btn-sm" name="button">
+                                        <i class="fas fa-edit"></i> Detalle
+                                    </button>&nbsp;&nbsp;
+                                    <button [routerLink]="['/admin', instrumento.id]" type="button"
+                                        class="btn btn-outline-success mt-1 mb-1 btn-sm" name="button">
+                                        <i class="fas fa-edit"></i> Editar
+                                    </button>&nbsp;&nbsp;
+                                    <button type="button" class="btn btn-outline-danger mt-1 mb-1 btn-sm" name="button">
+                                        <i class="fas fa-trash-alt"></i> Eliminar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
