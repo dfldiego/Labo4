@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DondeEstamosComponent } from './components/donde-estamos/donde-estamos.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleInstrumentoComponent } from './components/detalle-instrumento/detalle-instrumento.component';
+import { InstrumentoListaComponent } from './components/instrumento-lista/instrumento-lista.component';
+import { InstrumentoAdminComponent } from './components/instrumento-admin/instrumento-admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DetalleInstrumentoComponent } from './components/detalle-instrumento/de
     HomeComponent,
     DondeEstamosComponent,
     ProductosComponent,
-    DetalleInstrumentoComponent
+    DetalleInstrumentoComponent,
+    InstrumentoListaComponent,
+    InstrumentoAdminComponent
   ],
   imports: [
     BrowserModule,
