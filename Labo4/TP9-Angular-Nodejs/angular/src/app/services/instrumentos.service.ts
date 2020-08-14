@@ -38,7 +38,9 @@ export class InstrumentosService {
 
   //Metodo GETONE()
   getInstrumentoFromDataBaseById(idx: string) {
-    return this.http.get("http://localhost:3000/instrumento/" + idx).pipe(map(instrumentoEncontrado => instrumentoEncontrado));
+    return this.http.get("http://localhost:3000/instrumento/" + idx).pipe(map(instrumentoEncontrado => {
+      return instrumentoEncontrado;
+    }));
   }
 
   //Metodo CREATE()
@@ -47,7 +49,7 @@ export class InstrumentosService {
   }
 
   //Metodo UPDATE()
-  updateInstrumento(id: number, data: Instrumento): Observable<Instrumento> {
+  updateInstrumento(id: string, data: Instrumento): Observable<Instrumento> {
     return this.http.put<Instrumento>("http://localhost:3000/instrumento/" + id, data);
   }
 

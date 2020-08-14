@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class InstrumentoAdminComponent implements OnInit {
   instrumento: Instrumento = {
-    id: "0",
+    id: "",
     instrumento: "",
     marca: "",
     modelo: "",
@@ -28,10 +28,10 @@ export class InstrumentoAdminComponent implements OnInit {
   constructor(private servicioInstrumento: InstrumentosService, private router: Router, private activeRoute: ActivatedRoute) {
     this.activeRoute.params.subscribe(parametros => {
       this.idInstrumento = parametros['id'];
-      debugger;
       if (this.idInstrumento != "nuevo") {
         servicioInstrumento.getInstrumentoFromDataBaseById(this.idInstrumento)
-          .subscribe(instrumentoEncontrado => this.instrumento = instrumentoEncontrado as Instrumento);
+          .subscribe((instrumentoEncontrado: any) => this.instrumento = instrumentoEncontrado.data as Instrumento);
+        console.log(this.instrumento);
       } else {
         console.log("ES NUEVO");
       }
@@ -72,8 +72,8 @@ export class InstrumentoAdminComponent implements OnInit {
     } else {
       //ACTUALIZAR INSTRUMENTO
       console.log(`Update ${this.idInstrumento}`);
-      this.servicioInstrumento.updateInstrumento(Number(this.idInstrumento), this.instrumento).subscribe(data => {
-        if (data && data[1].id) {
+      this.servicioInstrumento.updateInstrumento(this.idInstrumento, this.instrumento).subscribe((data: any) => {
+        if (data) {
           this.resultadoOperacion = "Operación finalizada con exito";
           this.router.navigate(['/lista']);
           console.log(data);
