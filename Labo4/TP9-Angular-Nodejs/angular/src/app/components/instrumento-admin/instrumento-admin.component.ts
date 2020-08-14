@@ -107,17 +107,17 @@ export class InstrumentoAdminComponent implements OnInit {
   }
 
   handleFileInput(files: FileList) {
-    debugger;
     this.instrumento.imagen = files.item(0).name;
     const data: FormData = new FormData();
-    data.append('file', files.item(0));
+    data.append('imagen', files.item(0));
     // Llamo al servicio y realizo el upload de la imagen
-    this.servicioInstrumento.uploadFile(data, this.instrumento.imagen).subscribe(res => {
-      alert('Imagen cargada con éxito');
-    }, error => {
-      alert('Ocurrió un error al cargar la imagen, intenta nuevamente.');
-      this.instrumento.imagen = '';
-      console.log(error);
-    });
+    this.servicioInstrumento.uploadFile(data).subscribe(
+      res => {
+        alert('Imagen cargada con éxito');
+      }, error => {
+        alert('Ocurrió un error al cargar la imagen, intenta nuevamente.');
+        this.instrumento.imagen = '';
+        console.log(error);
+      });
   }
 }
