@@ -61,4 +61,8 @@ export class InstrumentosService {
     }));
   }
 
+  uploadFile(file: FormData, nombreImagen: string) {
+    return this.http.post("http://localhost:3000/images/" + nombreImagen, file, { responseType: 'text' });
+  }
+
 }
